@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2017-10-18T14:07:44.140Z</updated>
+  <updated>2017-10-18T14:27:29.273Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2017/10/18/%E5%A4%A7%E5%AD%A6%E5%9B%9B%E5%B9%B4%E5%90%8E%E6%88%91%E8%AF%A5%E4%BD%95%E5%8E%BB%E4%BD%95%E4%BB%8E/"/>
     <id>http://yoursite.com/2017/10/18/大学四年后我该何去何从/</id>
     <published>2017-10-18T14:03:03.000Z</published>
-    <updated>2017-10-18T14:07:44.140Z</updated>
+    <updated>2017-10-18T14:27:29.273Z</updated>
     
     <content type="html"><![CDATA[<h1 id="第一次用密码来保存文章"><a href="#第一次用密码来保存文章" class="headerlink" title="第一次用密码来保存文章"></a><center>第一次用密码来保存文章</center></h1><h2 id="惊不惊喜，意不意外？"><a href="#惊不惊喜，意不意外？" class="headerlink" title="惊不惊喜，意不意外？"></a><center>惊不惊喜，意不意外？</center></h2><hr><p><div align="right">2017/10/18 22:06:57 </div></p>]]></content>
     
@@ -44,7 +44,7 @@
     <link href="http://yoursite.com/2017/10/15/Python%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6/"/>
     <id>http://yoursite.com/2017/10/15/Python发送邮件/</id>
     <published>2017-10-14T16:00:00.000Z</published>
-    <updated>2017-10-18T12:18:04.507Z</updated>
+    <updated>2017-10-18T14:26:43.110Z</updated>
     
     <content type="html"><![CDATA[<h2 id="最近看到了一个挺有意思的Python项目"><a href="#最近看到了一个挺有意思的Python项目" class="headerlink" title="最近看到了一个挺有意思的Python项目"></a>最近看到了一个挺有意思的Python项目</h2><h1 id="Pyhton通过SMTP发送邮件"><a href="#Pyhton通过SMTP发送邮件" class="headerlink" title="Pyhton通过SMTP发送邮件"></a><center>Pyhton通过SMTP发送邮件</center></h1><h2 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a><strong>代码如下</strong></h2><p>#1. <strong>导入需要的库</strong></p><pre><code>import smtplib  from email.mime.text import mimetextfrom email.mime.multipart import mimemultipartfrom email.mime.base import mimebasefrom email import encoders</code></pre><hr><p>#2. <strong>核心代码</strong></p><pre><code>fromaddr = &quot;发送人的邮箱&quot;toaddr = &quot;接收方的邮箱&quot;toaddr = [&apos;******@qq.com&apos;,&apos;******@qq.com&apos;,&apos;******@163.com&apos;]`msg = MIMEMultipart()msg[&apos;From&apos;] = fromaddr#msg[&apos;To&apos;] = toaddrmsg[&apos;To&apos;]=&apos;,&apos;.join(toaddr)</code></pre><h1 id="邮件主题"><a href="#邮件主题" class="headerlink" title="邮件主题"></a>邮件主题</h1><pre><code>msg[&apos;Subject&apos;] = &quot;Alan lee&quot;</code></pre><h1 id="邮件正文"><a href="#邮件正文" class="headerlink" title="邮件正文"></a>邮件正文</h1><pre><code>body = &quot;I have a dream！&quot;msg.attach(MIMEText(body, &apos;plain&apos;))&apos;&apos;&apos;</code></pre><h1 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h1><pre><code>filename = &quot;G:/Linux.txt&quot;attachment = open(filename, &apos;rb&apos;)part = MIMEBase(&apos;application&apos;, &apos;octet-stream&apos;)# 这也可以： part = MIMEBase(&apos;application&apos;, &apos;pdf&apos;)part.set_payload((attachment).read())encoders.encode_base64(part)part.add_header(&apos;Content-Disposition&apos;, &apos;attachment&apos;, filename=filename)msg.attach(part)&apos;&apos;&apos;server = smtplib.SMTP(&quot;smtp.qq.com&quot;)server.starttls()server.login(fromaddr , &quot;vrrrfievytdocbee&quot;)text = msg.as_string()server.sendmail(fromaddr, toaddr, text)print (&quot;邮件发送成功！&quot;)server.quit()</code></pre><hr><h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><p><img src="https://i.imgur.com/ZrM2edd.png" alt=""><br>2017/10/15 17:40:44 </p>]]></content>
     
@@ -69,7 +69,7 @@
     <link href="http://yoursite.com/2017/07/05/%E6%9C%80%E5%90%8E%E7%9A%84%E5%A4%A9%E5%88%80/"/>
     <id>http://yoursite.com/2017/07/05/最后的天刀/</id>
     <published>2017-07-04T16:00:00.000Z</published>
-    <updated>2017-07-05T13:46:19.914Z</updated>
+    <updated>2017-10-18T14:26:53.112Z</updated>
     
     <content type="html"><![CDATA[<h1 id="天涯明月刀"><a href="#天涯明月刀" class="headerlink" title="天涯明月刀"></a>天涯明月刀</h1><h2 id="天命风流-枯叶蝶"><a href="#天命风流-枯叶蝶" class="headerlink" title="天命风流-枯叶蝶"></a>天命风流-枯叶蝶</h2><h2 id="江湖真好，我会怀念你的"><a href="#江湖真好，我会怀念你的" class="headerlink" title="江湖真好，我会怀念你的"></a>江湖真好，我会怀念你的</h2><p>今天开始正式离开这个江湖了，大学整整两年的时间都花在了天涯明月刀<br>感受到了这个游戏的激情与友情，遇到过许许多多的朋友，也有过许许多多的争执，但是我会怀念这个游戏的，今天，在大二下学期的学期末选择了退出天涯明月刀，是经过自己的深思熟虑的，不是头脑一热，大学四年，也是时候吧精力从游戏放在学业上了。进入这个江湖，我不曾后悔，离开这个江湖，我也无怨无悔，因为我收获了许多。谢谢天涯明月刀，让我度过了大学最快乐的两年。。</p><hr><p><img src="http://i.imgur.com/YYsZw6M.jpg" alt=""><br><img src="http://i.imgur.com/Swd8krp.jpg" alt=""><br>2017/7/5 21:34:03 </p>]]></content>
     
@@ -94,7 +94,7 @@
     <link href="http://yoursite.com/2017/06/04/%E6%8A%80%E6%9C%AF%E5%AE%85/"/>
     <id>http://yoursite.com/2017/06/04/技术宅/</id>
     <published>2017-06-04T08:50:34.000Z</published>
-    <updated>2017-10-18T08:45:08.705Z</updated>
+    <updated>2017-10-18T14:27:15.320Z</updated>
     
     <content type="html"><![CDATA[<h1 id="这是个大数据的时代"><a href="#这是个大数据的时代" class="headerlink" title="这是个大数据的时代"></a>这是个大数据的时代</h1><h2 id="技术宅能拯救世界"><a href="#技术宅能拯救世界" class="headerlink" title="技术宅能拯救世界"></a>技术宅能拯救世界</h2><p><img src="http://i.imgur.com/US8S6b9.jpg" alt=""></p><h2 id="我是一个死宅，是一个厉害的技术宅！"><a href="#我是一个死宅，是一个厉害的技术宅！" class="headerlink" title="我是一个死宅，是一个厉害的技术宅！"></a>我是一个死宅，是一个厉害的技术宅！</h2><h3 id="技术"><a href="#技术" class="headerlink" title="技术"></a>技术</h3><ul><li>日志</li><li>文件</li><li>BUG</li></ul><ol><li>图片</li><li>消息</li><li><a href="http://www.jianshu.com" target="_blank" rel="external">简书</a></li></ol><blockquote><p>一盏灯， 一片昏黄； 一简书， 一杯淡茶。 守着那一份淡定， 品读属于自己的寂寞。 保持淡定， 才能欣赏到最美丽的风景！ 保持淡定， 人生从此不再寂寞。<br>人生如果没有梦想，跟咸鱼有什么区别！！</p></blockquote><p> <em>一盏灯</em>， 一片昏黄；<strong>一简书</strong>， 一杯淡茶。 守着那一份淡定， 品读属于自己的寂寞。 保持淡定， 才能欣赏到最美丽的风景！ 保持淡定， 人生从此不再寂寞。</p><h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><code>Hello World</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">第一段代码</div><div class="line">第二段代码</div><div class="line">第三段代码</div></pre></td></tr></table></figure></p><p><img src="http://upload-images.jianshu.io/upload_images/5630640-30941cd57ecb5595.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="ic_launcher.jpg"></p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="http://music.163.com/outchain/player?type=2&id=28947001&auto=1&height=66"></iframe><h2 id="表格"><a href="#表格" class="headerlink" title="表格"></a>表格</h2><table><br>  <tr><br>      <td>技术宅</td><br>      <td>改变世界</td><br>  </tr><br>  <tr><br>      <td>踏雪寻梅</td><br>      <td>飞燕逐月</td><br>  </tr><br></table><hr><p>2017/6/4 12:45:54 </p>]]></content>
     
@@ -119,7 +119,7 @@
     <link href="http://yoursite.com/2017/06/04/%E6%8A%80%E6%9C%AF%E5%AE%85%E8%83%BD%E6%94%B9%E5%8F%98%E4%B8%96%E7%95%8C/"/>
     <id>http://yoursite.com/2017/06/04/技术宅能改变世界/</id>
     <published>2017-06-04T08:50:34.000Z</published>
-    <updated>2017-06-06T09:01:51.999Z</updated>
+    <updated>2017-10-18T14:27:00.219Z</updated>
     
     <content type="html"><![CDATA[<h1 id="欢迎来到AlanLee的博客，这是我人生当中建成的第一个博客，搭建起来完全是自己一步一步的来摸索，过程虽然很艰辛，但是自己并没有放弃。"><a href="#欢迎来到AlanLee的博客，这是我人生当中建成的第一个博客，搭建起来完全是自己一步一步的来摸索，过程虽然很艰辛，但是自己并没有放弃。" class="headerlink" title="欢迎来到AlanLee的博客，这是我人生当中建成的第一个博客，搭建起来完全是自己一步一步的来摸索，过程虽然很艰辛，但是自己并没有放弃。"></a>欢迎来到AlanLee的博客，这是我人生当中建成的第一个博客，搭建起来完全是自己一步一步的来摸索，过程虽然很艰辛，但是自己并没有放弃。</h1><p><img src="http://img.newyx.net/photo/201407/07/f48280e633.jpg" alt=""></p><h2 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h2><h3 id="未来的自己要变得更强，在技术宅中发挥自己的技术，用技术改变世界，希望能在未来的IT行业中占有一席之位。。"><a href="#未来的自己要变得更强，在技术宅中发挥自己的技术，用技术改变世界，希望能在未来的IT行业中占有一席之位。。" class="headerlink" title="未来的自己要变得更强，在技术宅中发挥自己的技术，用技术改变世界，希望能在未来的IT行业中占有一席之位。。"></a>未来的自己要变得更强，在技术宅中发挥自己的技术，用技术改变世界，希望能在未来的IT行业中占有一席之位。。</h3><h1 id="希望"><a href="#希望" class="headerlink" title="希望"></a>希望</h1><blockquote><p>我是站在巨人的肩膀上看世界的！！</p><iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width="330" height="86" src="//music.163.com/outchain/player?type=2&id=462391069&auto=1&height=66"></iframe></blockquote><hr><p>2017/6/4 16:57:33 </p>]]></content>
     
@@ -144,7 +144,7 @@
     <link href="http://yoursite.com/2017/06/03/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%97%B6%E4%BB%A3/"/>
     <id>http://yoursite.com/2017/06/03/大数据时代/</id>
     <published>2017-06-02T19:40:23.000Z</published>
-    <updated>2017-06-05T11:38:27.321Z</updated>
+    <updated>2017-10-18T14:27:22.484Z</updated>
     
     <summary type="html">
     
