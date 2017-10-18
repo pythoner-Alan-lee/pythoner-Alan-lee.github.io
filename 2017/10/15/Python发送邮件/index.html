@@ -87,19 +87,19 @@
 
 
 
-<meta name="description" content="最近看到了一个挺有意思的Python项目Pyhton通过SMTP发送邮件代码如下   导入需要的库 import smtplib from email.mime.text import MIMEText from email.mime.multipart import MIMEMultipart from email.mime.base import MIMEBase from email imp">
+<meta name="description" content="最近看到了一个挺有意思的Python项目Pyhton通过SMTP发送邮件代码如下#1. 导入需要的库 import smtplib    from email.mime.text import mimetext  from email.mime.multipart import mimemultipart  from email.mime.base import mimebase  from em">
 <meta name="keywords" content="Blog">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Python通过SMTP发送邮件">
 <meta property="og:url" content="http://yoursite.com/2017/10/15/Python发送邮件/index.html">
 <meta property="og:site_name" content="AlanLee Blog">
-<meta property="og:description" content="最近看到了一个挺有意思的Python项目Pyhton通过SMTP发送邮件代码如下   导入需要的库 import smtplib from email.mime.text import MIMEText from email.mime.multipart import MIMEMultipart from email.mime.base import MIMEBase from email imp">
+<meta property="og:description" content="最近看到了一个挺有意思的Python项目Pyhton通过SMTP发送邮件代码如下#1. 导入需要的库 import smtplib    from email.mime.text import mimetext  from email.mime.multipart import mimemultipart  from email.mime.base import mimebase  from em">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.imgur.com/ZrM2edd.png">
-<meta property="og:updated_time" content="2017-10-15T12:42:24.925Z">
+<meta property="og:updated_time" content="2017-10-18T12:18:04.507Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python通过SMTP发送邮件">
-<meta name="twitter:description" content="最近看到了一个挺有意思的Python项目Pyhton通过SMTP发送邮件代码如下   导入需要的库 import smtplib from email.mime.text import MIMEText from email.mime.multipart import MIMEMultipart from email.mime.base import MIMEBase from email imp">
+<meta name="twitter:description" content="最近看到了一个挺有意思的Python项目Pyhton通过SMTP发送邮件代码如下#1. 导入需要的库 import smtplib    from email.mime.text import mimetext  from email.mime.multipart import mimemultipart  from email.mime.base import mimebase  from em">
 <meta name="twitter:image" content="https://i.imgur.com/ZrM2edd.png">
 
 
@@ -519,51 +519,69 @@
       
 
       
-        <h2 id="最近看到了一个挺有意思的Python项目"><a href="#最近看到了一个挺有意思的Python项目" class="headerlink" title="最近看到了一个挺有意思的Python项目"></a>最近看到了一个挺有意思的Python项目</h2><h1 id="Pyhton通过SMTP发送邮件"><a href="#Pyhton通过SMTP发送邮件" class="headerlink" title="Pyhton通过SMTP发送邮件"></a>Pyhton通过SMTP发送邮件</h1><p><strong>代码如下</strong></p>
-<hr>
-<ol>
-<li><strong>导入需要的库</strong><blockquote>
-<p><code>import smtplib</code></p>
-<p><code>from email.mime.text import MIMEText</code></p>
-<p><code>from email.mime.multipart import MIMEMultipart</code></p>
-<p><code>from email.mime.base import MIMEBase</code></p>
-<p><code>from email import encoders</code></p>
-</blockquote>
-</li>
-</ol>
-<hr>
-<ol>
-<li><strong>核心代码</strong></li>
-</ol>
-<blockquote>
-<p>`fromaddr = “发送人的邮箱”</p>
-<p>toaddr = “接收方的邮箱”</p>
-<p>toaddr = [‘<strong>**</strong>@qq.com’,’<strong>**</strong>@qq.com’,’<strong>**</strong>@163.com’]`</p>
-<p>msg = MIMEMultipart()</p>
-<p>msg[‘From’] = fromaddr</p>
-<p>#msg[‘To’] = toaddr</p>
-<p>msg[‘To’]=’,’.join(toaddr)</p>
-<h1 id="邮件主题"><a href="#邮件主题" class="headerlink" title="邮件主题"></a>邮件主题</h1><p>msg[‘Subject’] = “Alan lee”</p>
-<h1 id="邮件正文"><a href="#邮件正文" class="headerlink" title="邮件正文"></a>邮件正文</h1><p>body = “I have a dream！”</p>
-<p>msg.attach(MIMEText(body, ‘plain’))</p>
-<p>‘’’</p>
-<h1 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h1><p>filename = “G:/Linux.txt”</p>
-<p>attachment = open(filename, ‘rb’)</p>
-<p>part = MIMEBase(‘application’, ‘octet-stream’)</p>
-<h1 id="这也可以：-part-MIMEBase-‘application’-‘pdf’"><a href="#这也可以：-part-MIMEBase-‘application’-‘pdf’" class="headerlink" title="这也可以： part = MIMEBase(‘application’, ‘pdf’)"></a>这也可以： part = MIMEBase(‘application’, ‘pdf’)</h1><p>part.set_payload((attachment).read())</p>
-<p>encoders.encode_base64(part)</p>
-<p>part.add_header(‘Content-Disposition’, ‘attachment’, &gt;filename=filename)</p>
-<p>msg.attach(part)</p>
-<p>‘’’</p>
-<p>server = smtplib.SMTP(“smtp.qq.com”)</p>
-<p>server.starttls()</p>
-<p>server.login(fromaddr , “vrrrfievytdocbee”)</p>
-<p>text = msg.as_string()</p>
-<p>server.sendmail(fromaddr, toaddr, text)</p>
-<p>print (“邮件发送成功！”)</p>
-<p>server.quit()</p>
-</blockquote>
-<hr>
+        <h2 id="最近看到了一个挺有意思的Python项目"><a href="#最近看到了一个挺有意思的Python项目" class="headerlink" title="最近看到了一个挺有意思的Python项目"></a>最近看到了一个挺有意思的Python项目</h2><h1 id="Pyhton通过SMTP发送邮件"><a href="#Pyhton通过SMTP发送邮件" class="headerlink" title="Pyhton通过SMTP发送邮件"></a><center>Pyhton通过SMTP发送邮件</center></h1><h2 id="代码如下"><a href="#代码如下" class="headerlink" title="代码如下"></a><strong>代码如下</strong></h2><p>#1. <strong>导入需要的库</strong></p>
+<pre><code>import smtplib  
+
+from email.mime.text import mimetext
+
+from email.mime.multipart import mimemultipart
+
+from email.mime.base import mimebase
+
+from email import encoders
+</code></pre><hr>
+<p>#2. <strong>核心代码</strong></p>
+<pre><code>fromaddr = &quot;发送人的邮箱&quot;
+
+toaddr = &quot;接收方的邮箱&quot;
+
+toaddr = [&apos;******@qq.com&apos;,&apos;******@qq.com&apos;,&apos;******@163.com&apos;]`
+
+msg = MIMEMultipart()
+
+msg[&apos;From&apos;] = fromaddr
+
+#msg[&apos;To&apos;] = toaddr
+
+msg[&apos;To&apos;]=&apos;,&apos;.join(toaddr)
+</code></pre><h1 id="邮件主题"><a href="#邮件主题" class="headerlink" title="邮件主题"></a>邮件主题</h1><pre><code>msg[&apos;Subject&apos;] = &quot;Alan lee&quot;
+</code></pre><h1 id="邮件正文"><a href="#邮件正文" class="headerlink" title="邮件正文"></a>邮件正文</h1><pre><code>body = &quot;I have a dream！&quot;
+
+msg.attach(MIMEText(body, &apos;plain&apos;))
+
+&apos;&apos;&apos;
+</code></pre><h1 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h1><pre><code>filename = &quot;G:/Linux.txt&quot;
+
+attachment = open(filename, &apos;rb&apos;)
+
+part = MIMEBase(&apos;application&apos;, &apos;octet-stream&apos;)
+
+# 这也可以： part = MIMEBase(&apos;application&apos;, &apos;pdf&apos;)
+
+part.set_payload((attachment).read())
+
+encoders.encode_base64(part)
+
+part.add_header(&apos;Content-Disposition&apos;, &apos;attachment&apos;, filename=filename)
+
+msg.attach(part)
+
+&apos;&apos;&apos;
+
+server = smtplib.SMTP(&quot;smtp.qq.com&quot;)
+
+server.starttls()
+
+server.login(fromaddr , &quot;vrrrfievytdocbee&quot;)
+
+text = msg.as_string()
+
+server.sendmail(fromaddr, toaddr, text)
+
+print (&quot;邮件发送成功！&quot;)
+
+server.quit()
+</code></pre><hr>
 <h2 id="运行结果"><a href="#运行结果" class="headerlink" title="运行结果"></a>运行结果</h2><p><img src="https://i.imgur.com/ZrM2edd.png" alt=""><br>2017/10/15 17:40:44 </p>
 
       
@@ -643,10 +661,6 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2017/10/18/1/" rel="prev" title="1">
-                1 <i class="fa fa-chevron-right"></i>
-              </a>
-            
           </div>
         </div>
       
@@ -719,7 +733,7 @@
           
             <div class="site-state-item site-state-posts">
               <a href="/archives">
-                <span class="site-state-item-count">11</span>
+                <span class="site-state-item-count">5</span>
                 <span class="site-state-item-name">日志</span>
               </a>
             </div>
@@ -823,7 +837,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#最近看到了一个挺有意思的Python项目"><span class="nav-number">1.</span> <span class="nav-text">最近看到了一个挺有意思的Python项目</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pyhton通过SMTP发送邮件"><span class="nav-number"></span> <span class="nav-text">Pyhton通过SMTP发送邮件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#邮件主题"><span class="nav-number"></span> <span class="nav-text">邮件主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#邮件正文"><span class="nav-number"></span> <span class="nav-text">邮件正文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附件"><span class="nav-number"></span> <span class="nav-text">附件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#这也可以：-part-MIMEBase-‘application’-‘pdf’"><span class="nav-number"></span> <span class="nav-text">这也可以： part = MIMEBase(‘application’, ‘pdf’)</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运行结果"><span class="nav-number">1.</span> <span class="nav-text">运行结果</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#最近看到了一个挺有意思的Python项目"><span class="nav-number">1.</span> <span class="nav-text">最近看到了一个挺有意思的Python项目</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pyhton通过SMTP发送邮件"><span class="nav-number"></span> <span class="nav-text">Pyhton通过SMTP发送邮件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#代码如下"><span class="nav-number">1.</span> <span class="nav-text">代码如下</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#邮件主题"><span class="nav-number"></span> <span class="nav-text">邮件主题</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#邮件正文"><span class="nav-number"></span> <span class="nav-text">邮件正文</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#附件"><span class="nav-number"></span> <span class="nav-text">附件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#运行结果"><span class="nav-number">1.</span> <span class="nav-text">运行结果</span></a></li></ol></div>
             
 
           </div>
