@@ -3,6 +3,73 @@
   
     
     <entry>
+      <title><![CDATA[给脚本授予管理员权限;]]></title>
+      <url>/2017/11/02/%E7%BB%99%E8%84%9A%E6%9C%AC%E6%8E%88%E4%BA%88%E7%AE%A1%E7%90%86%E5%91%98%E6%9D%83%E9%99%90/</url>
+      <content type="html"><![CDATA[<h1 id="给Oracle的启动脚本和关闭脚本授予管理员权限"><a href="#给Oracle的启动脚本和关闭脚本授予管理员权限" class="headerlink" title="给Oracle的启动脚本和关闭脚本授予管理员权限"></a>给Oracle的启动脚本和关闭脚本授予管理员权限</h1><hr>
+<h2 id="最近由于经常要用Oracle数据库，所以每次启动Oracle之前都要启动它的服务，但由于我又是个很—-懒得技术宅，所以决定写个Oracle脚本启动服务，但碍于每次都要右键管理员权限去启动脚本，所以在网上找了个授予管理员权限的代码"><a href="#最近由于经常要用Oracle数据库，所以每次启动Oracle之前都要启动它的服务，但由于我又是个很—-懒得技术宅，所以决定写个Oracle脚本启动服务，但碍于每次都要右键管理员权限去启动脚本，所以在网上找了个授予管理员权限的代码" class="headerlink" title="最近由于经常要用Oracle数据库，所以每次启动Oracle之前都要启动它的服务，但由于我又是个很—-懒得技术宅，所以决定写个Oracle脚本启动服务，但碍于每次都要右键管理员权限去启动脚本，所以在网上找了个授予管理员权限的代码"></a>最近由于经常要用Oracle数据库，所以每次启动Oracle之前都要启动它的服务，但由于我又是个很—-懒得技术宅，所以决定写个Oracle脚本启动服务，但碍于每次都要右键管理员权限去启动脚本，所以在网上找了个授予管理员权限的代码</h2><hr>
+<h1 id="注意：以下的代码是针对Oracle-11g版本的，如果Oracle数据库不是这个版本的，请修改一下代码，切勿直接复制粘贴运行。"><a href="#注意：以下的代码是针对Oracle-11g版本的，如果Oracle数据库不是这个版本的，请修改一下代码，切勿直接复制粘贴运行。" class="headerlink" title="注意：以下的代码是针对Oracle 11g版本的，如果Oracle数据库不是这个版本的，请修改一下代码，切勿直接复制粘贴运行。"></a>注意：以下的代码是针对Oracle 11g版本的，如果Oracle数据库不是这个版本的，请修改一下代码，切勿直接复制粘贴运行。</h1><p><strong>代码如下</strong></p>
+<p>#启动Oracle服务的脚本代码</p>
+<pre><code>@ ECHO 启动 Oracle 11g 服务
+
+net start &quot;OracleDBConsoleorcl&quot;
+
+net start &quot;OracleOraDb11g_home1ClrAgent&quot;
+
+net start &quot;OracleServiceORCL&quot;
+
+@ ECHO 启动完毕 按任意键继续
+
+pause
+
+exit
+</code></pre><p>#关闭Oracle服务的脚本代码<br>    @echo off</p>
+<pre><code>@ ECHO 停止 Oracle 11g 服务
+
+net stop &quot;OracleDBConsoleorcl&quot;
+
+net stop &quot;OracleOraDb11g_home1ClrAgent&quot;
+
+net stop &quot;OracleServiceORCL&quot;
+
+@ ECHO 停止完毕 按任意键继续
+
+pause
+
+exit
+</code></pre><p>#重要的事情说三遍</p>
+<h2 id="记得要以管理员的方式打开脚本，不然运行会出错！"><a href="#记得要以管理员的方式打开脚本，不然运行会出错！" class="headerlink" title="记得要以管理员的方式打开脚本，不然运行会出错！"></a>记得要以管理员的方式打开脚本，不然运行会出错！</h2><h2 id="记得要以管理员的方式打开脚本，不然运行会出错！-1"><a href="#记得要以管理员的方式打开脚本，不然运行会出错！-1" class="headerlink" title="记得要以管理员的方式打开脚本，不然运行会出错！"></a>记得要以管理员的方式打开脚本，不然运行会出错！</h2><h2 id="记得要以管理员的方式打开脚本，不然运行会出错！-2"><a href="#记得要以管理员的方式打开脚本，不然运行会出错！-2" class="headerlink" title="记得要以管理员的方式打开脚本，不然运行会出错！"></a>记得要以管理员的方式打开脚本，不然运行会出错！</h2><p>#给脚本授予管理员权限的代码<br>    @echo off</p>
+<pre><code>&gt;nul 2&gt;&amp;1 &quot;%SYSTEMROOT%\system32\cacls.exe&quot; &quot;%SYSTEMROOT%\system32\config\system&quot;
+if &apos;%errorlevel%&apos; NEQ &apos;0&apos; (
+goto UACPrompt
+) else ( goto gotAdmin )
+:UACPrompt
+echo Set UAC = CreateObject^(&quot;Shell.Application&quot;^) &gt; &quot;%temp%\getadmin.vbs&quot;
+echo UAC.ShellExecute &quot;%~s0&quot;, &quot;&quot;, &quot;&quot;, &quot;runas&quot;, 1 &gt;&gt; &quot;%temp%\getadmin.vbs&quot;
+&quot;%temp%\getadmin.vbs&quot;
+exit /B
+:gotAdmin
+if exist &quot;%temp%\getadmin.vbs&quot; ( del &quot;%temp%\getadmin.vbs&quot; )
+pushd &quot;%CD%&quot;
+CD /D &quot;%~dp0&quot;
+</code></pre><p>#运行结果<br><img src="https://i.imgur.com/EymJB1q.png" alt=""><br><img src="https://i.imgur.com/EQ2R9QA.png" alt=""></p>
+]]></content>
+      
+        <categories>
+            
+            <category> 大数据时代的我们！！ </category>
+            
+        </categories>
+        
+        
+        <tags>
+            
+            <tag> bat </tag>
+            
+        </tags>
+        
+    </entry>
+    
+    <entry>
       <title><![CDATA['大学四年后我该何去何从']]></title>
       <url>/2017/10/18/%E5%A4%A7%E5%AD%A6%E5%9B%9B%E5%B9%B4%E5%90%8E%E6%88%91%E8%AF%A5%E4%BD%95%E5%8E%BB%E4%BD%95%E4%BB%8E/</url>
       <content type="html"><![CDATA[<h1 id="第一次用密码来保存文章"><a href="#第一次用密码来保存文章" class="headerlink" title="第一次用密码来保存文章"></a><center>第一次用密码来保存文章</center></h1><h2 id="惊不惊喜，意不意外？"><a href="#惊不惊喜，意不意外？" class="headerlink" title="惊不惊喜，意不意外？"></a><center>惊不惊喜，意不意外？</center></h2><hr>
