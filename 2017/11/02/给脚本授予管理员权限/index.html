@@ -109,7 +109,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.imgur.com/EymJB1q.png">
 <meta property="og:image" content="https://i.imgur.com/EQ2R9QA.png">
-<meta property="og:updated_time" content="2017-11-02T07:08:30.235Z">
+<meta property="og:updated_time" content="2017-11-02T07:11:18.077Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="给脚本授予管理员权限;">
 <meta name="twitter:description" content="给Oracle的启动脚本和关闭脚本授予管理员权限 最近由于经常要用Oracle数据库，所以每次启动Oracle之前都要启动它的服务，但由于我又是个很—-懒得技术宅，所以决定写个Oracle脚本启动服务，但碍于每次都要右键管理员权限去启动脚本，所以在网上找了个授予管理员权限的代码 注意：以下的代码是针对Oracle 11g版本的，如果Oracle数据库不是这个版本的，请修改一下代码，切勿直接复制粘贴">
@@ -599,8 +599,7 @@
         <h1 id="给Oracle的启动脚本和关闭脚本授予管理员权限"><a href="#给Oracle的启动脚本和关闭脚本授予管理员权限" class="headerlink" title="给Oracle的启动脚本和关闭脚本授予管理员权限"></a><center>给Oracle的启动脚本和关闭脚本授予管理员权限</center></h1><hr>
 <h2 id="最近由于经常要用Oracle数据库，所以每次启动Oracle之前都要启动它的服务，但由于我又是个很—-懒得技术宅，所以决定写个Oracle脚本启动服务，但碍于每次都要右键管理员权限去启动脚本，所以在网上找了个授予管理员权限的代码"><a href="#最近由于经常要用Oracle数据库，所以每次启动Oracle之前都要启动它的服务，但由于我又是个很—-懒得技术宅，所以决定写个Oracle脚本启动服务，但碍于每次都要右键管理员权限去启动脚本，所以在网上找了个授予管理员权限的代码" class="headerlink" title="最近由于经常要用Oracle数据库，所以每次启动Oracle之前都要启动它的服务，但由于我又是个很—-懒得技术宅，所以决定写个Oracle脚本启动服务，但碍于每次都要右键管理员权限去启动脚本，所以在网上找了个授予管理员权限的代码"></a>最近由于经常要用Oracle数据库，所以每次启动Oracle之前都要启动它的服务，但由于我又是个很—-懒得技术宅，所以决定写个Oracle脚本启动服务，但碍于每次都要右键管理员权限去启动脚本，所以在网上找了个授予管理员权限的代码</h2><hr>
 <h1 id="注意：以下的代码是针对Oracle-11g版本的，如果Oracle数据库不是这个版本的，请修改一下代码，切勿直接复制粘贴运行。"><a href="#注意：以下的代码是针对Oracle-11g版本的，如果Oracle数据库不是这个版本的，请修改一下代码，切勿直接复制粘贴运行。" class="headerlink" title="注意：以下的代码是针对Oracle 11g版本的，如果Oracle数据库不是这个版本的，请修改一下代码，切勿直接复制粘贴运行。"></a>注意：以下的代码是针对Oracle 11g版本的，如果Oracle数据库不是这个版本的，请修改一下代码，切勿直接复制粘贴运行。</h1><p><strong>代码如下</strong></p>
-<p>#启动Oracle服务的脚本代码</p>
-<pre><code>@ ECHO 启动 Oracle 11g 服务
+<h1 id="启动Oracle服务的脚本代码"><a href="#启动Oracle服务的脚本代码" class="headerlink" title="启动Oracle服务的脚本代码"></a>启动Oracle服务的脚本代码</h1><pre><code>@ ECHO 启动 Oracle 11g 服务
 
 net start &quot;OracleDBConsoleorcl&quot;
 
@@ -613,8 +612,9 @@ net start &quot;OracleServiceORCL&quot;
 pause
 
 exit
-</code></pre><p>#关闭Oracle服务的脚本代码<br>    @echo off</p>
-<pre><code>@ ECHO 停止 Oracle 11g 服务
+</code></pre><h1 id="关闭Oracle服务的脚本代码"><a href="#关闭Oracle服务的脚本代码" class="headerlink" title="关闭Oracle服务的脚本代码"></a>关闭Oracle服务的脚本代码</h1><pre><code>@echo off
+
+@ ECHO 停止 Oracle 11g 服务
 
 net stop &quot;OracleDBConsoleorcl&quot;
 
@@ -627,8 +627,7 @@ net stop &quot;OracleServiceORCL&quot;
 pause
 
 exit
-</code></pre><p>#重要的事情说三遍</p>
-<h2 id="记得要以管理员的方式打开脚本，不然运行会出错！"><a href="#记得要以管理员的方式打开脚本，不然运行会出错！" class="headerlink" title="记得要以管理员的方式打开脚本，不然运行会出错！"></a>记得要以管理员的方式打开脚本，不然运行会出错！</h2><h2 id="记得要以管理员的方式打开脚本，不然运行会出错！-1"><a href="#记得要以管理员的方式打开脚本，不然运行会出错！-1" class="headerlink" title="记得要以管理员的方式打开脚本，不然运行会出错！"></a>记得要以管理员的方式打开脚本，不然运行会出错！</h2><h2 id="记得要以管理员的方式打开脚本，不然运行会出错！-2"><a href="#记得要以管理员的方式打开脚本，不然运行会出错！-2" class="headerlink" title="记得要以管理员的方式打开脚本，不然运行会出错！"></a>记得要以管理员的方式打开脚本，不然运行会出错！</h2><p>#给脚本授予管理员权限的代码<br>    @echo off</p>
+</code></pre><h1 id="重要的事情说三遍"><a href="#重要的事情说三遍" class="headerlink" title="重要的事情说三遍"></a>重要的事情说三遍</h1><h2 id="记得要以管理员的方式打开脚本，不然运行会出错！"><a href="#记得要以管理员的方式打开脚本，不然运行会出错！" class="headerlink" title="记得要以管理员的方式打开脚本，不然运行会出错！"></a>记得要以管理员的方式打开脚本，不然运行会出错！</h2><h2 id="记得要以管理员的方式打开脚本，不然运行会出错！-1"><a href="#记得要以管理员的方式打开脚本，不然运行会出错！-1" class="headerlink" title="记得要以管理员的方式打开脚本，不然运行会出错！"></a>记得要以管理员的方式打开脚本，不然运行会出错！</h2><h2 id="记得要以管理员的方式打开脚本，不然运行会出错！-2"><a href="#记得要以管理员的方式打开脚本，不然运行会出错！-2" class="headerlink" title="记得要以管理员的方式打开脚本，不然运行会出错！"></a>记得要以管理员的方式打开脚本，不然运行会出错！</h2><p>#给脚本授予管理员权限的代码<br>    @echo off</p>
 <pre><code>&gt;nul 2&gt;&amp;1 &quot;%SYSTEMROOT%\system32\cacls.exe&quot; &quot;%SYSTEMROOT%\system32\config\system&quot;
 if &apos;%errorlevel%&apos; NEQ &apos;0&apos; (
 goto UACPrompt
@@ -952,7 +951,7 @@ CD /D &quot;%~dp0&quot;
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#给Oracle的启动脚本和关闭脚本授予管理员权限"><span class="nav-number">1.</span> <span class="nav-text">给Oracle的启动脚本和关闭脚本授予管理员权限</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最近由于经常要用Oracle数据库，所以每次启动Oracle之前都要启动它的服务，但由于我又是个很—-懒得技术宅，所以决定写个Oracle脚本启动服务，但碍于每次都要右键管理员权限去启动脚本，所以在网上找了个授予管理员权限的代码"><span class="nav-number">1.1.</span> <span class="nav-text">最近由于经常要用Oracle数据库，所以每次启动Oracle之前都要启动它的服务，但由于我又是个很—-懒得技术宅，所以决定写个Oracle脚本启动服务，但碍于每次都要右键管理员权限去启动脚本，所以在网上找了个授予管理员权限的代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意：以下的代码是针对Oracle-11g版本的，如果Oracle数据库不是这个版本的，请修改一下代码，切勿直接复制粘贴运行。"><span class="nav-number">2.</span> <span class="nav-text">注意：以下的代码是针对Oracle 11g版本的，如果Oracle数据库不是这个版本的，请修改一下代码，切勿直接复制粘贴运行。</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#记得要以管理员的方式打开脚本，不然运行会出错！"><span class="nav-number">2.1.</span> <span class="nav-text">记得要以管理员的方式打开脚本，不然运行会出错！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#记得要以管理员的方式打开脚本，不然运行会出错！-1"><span class="nav-number">2.2.</span> <span class="nav-text">记得要以管理员的方式打开脚本，不然运行会出错！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#记得要以管理员的方式打开脚本，不然运行会出错！-2"><span class="nav-number">2.3.</span> <span class="nav-text">记得要以管理员的方式打开脚本，不然运行会出错！</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#给Oracle的启动脚本和关闭脚本授予管理员权限"><span class="nav-number">1.</span> <span class="nav-text">给Oracle的启动脚本和关闭脚本授予管理员权限</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#最近由于经常要用Oracle数据库，所以每次启动Oracle之前都要启动它的服务，但由于我又是个很—-懒得技术宅，所以决定写个Oracle脚本启动服务，但碍于每次都要右键管理员权限去启动脚本，所以在网上找了个授予管理员权限的代码"><span class="nav-number">1.1.</span> <span class="nav-text">最近由于经常要用Oracle数据库，所以每次启动Oracle之前都要启动它的服务，但由于我又是个很—-懒得技术宅，所以决定写个Oracle脚本启动服务，但碍于每次都要右键管理员权限去启动脚本，所以在网上找了个授予管理员权限的代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#注意：以下的代码是针对Oracle-11g版本的，如果Oracle数据库不是这个版本的，请修改一下代码，切勿直接复制粘贴运行。"><span class="nav-number">2.</span> <span class="nav-text">注意：以下的代码是针对Oracle 11g版本的，如果Oracle数据库不是这个版本的，请修改一下代码，切勿直接复制粘贴运行。</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#启动Oracle服务的脚本代码"><span class="nav-number">3.</span> <span class="nav-text">启动Oracle服务的脚本代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#关闭Oracle服务的脚本代码"><span class="nav-number">4.</span> <span class="nav-text">关闭Oracle服务的脚本代码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#重要的事情说三遍"><span class="nav-number">5.</span> <span class="nav-text">重要的事情说三遍</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#记得要以管理员的方式打开脚本，不然运行会出错！"><span class="nav-number">5.1.</span> <span class="nav-text">记得要以管理员的方式打开脚本，不然运行会出错！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#记得要以管理员的方式打开脚本，不然运行会出错！-1"><span class="nav-number">5.2.</span> <span class="nav-text">记得要以管理员的方式打开脚本，不然运行会出错！</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#记得要以管理员的方式打开脚本，不然运行会出错！-2"><span class="nav-number">5.3.</span> <span class="nav-text">记得要以管理员的方式打开脚本，不然运行会出错！</span></a></li></ol></li></ol></div>
             
 
           </div>
